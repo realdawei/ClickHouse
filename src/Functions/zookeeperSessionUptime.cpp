@@ -11,7 +11,7 @@ namespace
     class FunctionZooKeeperSessionUptime : public FunctionServerConstantBase<UInt32, DataTypeUInt32, name>
     {
     public:
-        FunctionZooKeeperSessionUptime(ContextPtr context) : FunctionServerConstantBase(context, context->getZooKeeperSessionUptime()) {}
+        explicit FunctionZooKeeperSessionUptime(ContextPtr context) : FunctionServerConstantBase(context, context->getZooKeeperSessionUptime()) {}
 
         static FunctionPtr create(ContextPtr context) { return std::make_shared<FunctionZooKeeperSessionUptime>(context); }
     };
